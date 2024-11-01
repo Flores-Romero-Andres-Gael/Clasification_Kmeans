@@ -5,7 +5,7 @@ import DataSets.DataSet;
 import DataSets.DataPoint;
 import java.util.List;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         DataSet dataSet = new DataSet();
         dataSet.loadDataSet();

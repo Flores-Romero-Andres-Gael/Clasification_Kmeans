@@ -26,7 +26,7 @@ public class Kmeans {
         }
     }
 
-    //Asignar cluster a cada punto mas cercano
+    // Asignar cada punto de datos al clúster con el centroide más cercano
     public void asignarCluster(List<DataPoint> dataPoints){
 
         clusters.clear();
@@ -41,7 +41,7 @@ public class Kmeans {
 
     }
 
-    //Actualizar centroides
+    // Calcula un nuevo centroide para cada clúster en función de sus puntos de datos
     public void actualizarCentroides(){
         for (int i = 0; i < k; i++) {
             List<DataPoint> cluster = clusters.get(i);
@@ -87,12 +87,13 @@ public class Kmeans {
         return new DataPoint(promedios);
     }
 
-    //Calcular distancia entre dos puntos
+    // Calcular la distancia euclidiana entre dos puntos de datos
     private double calcularDistancia(DataPoint p1, DataPoint p2) {
         double suma = 0.0;
         for (int i = 0; i < p1.getAttributes().length; i++) {
             suma += Math.pow(p1.getAttributes()[i] - p2.getAttributes()[i], 2);
         }
+        
         return Math.sqrt(suma);
     }
 
